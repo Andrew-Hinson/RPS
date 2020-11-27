@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPSconsole</title>
-</head>
-<body>
-    <h1>Rock Paper Sissors</h1>
-    <p>The Console Version you never knew you wanted!</p>
-</body>
-<script src="app.js"></script>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPS - THE GAME</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section hero">
+    <div id="head" class="container hero-body has-text-centered">
+      <h1 class="title">
+        RPS
+      </h1>
+      <p class="subtitle">
+        Rock Paper Sissors <strong>THE GAME</strong>!
+      </p>
+    </div>
+    <div id="game-content" class="container">
+        <header class="card-header">
+            <p class="card-header-title is-centered">CURRENT WINNER:<span id="winner">Computer</span></p>
+          <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+             INSTRUCTIONS: Choose a button below, the computer will choose as well and auto determine the winner!
+          </div>
+        </div>
+        <div id="button-div" class="buttons is-centered">
+        <footer class="card-footer">
+          <button id="rock-button" class="button is-primary">Rock</button>
+          <button id="paper-button" class="button is-primary">Paper</button>
+          <button id="sissors-button" class="button is-primary">Sissors</button>
+        </footer>
+        </div>
+      </div>
+  </section>
+  </body>
+  <script src="app.js"></script>
 </html>

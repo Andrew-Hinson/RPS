@@ -1,5 +1,5 @@
 //randomly return Rock, Paper, Siccors, put to lowercase to weed out uppercase variables
-let userInput =  prompt('Please enter Rock, Paper, or Sissors').toLowerCase();
+//let userInput =  prompt('Please enter Rock, Paper, or Sissors').toLowerCase();
 // const playerSelection = userInput;
 // const computerSelection = computerPlay();
 // const outcomes = {
@@ -29,45 +29,62 @@ let computerPlay = function () {
     }
 }
 
+const rockButton = document.querySelector('#rock-button');
+const paperButton = document.querySelector('#paper-button');
+const sissorsButton = document.querySelector('#sissors-button');
 
-
-
-
-let playRound = function (userSelection, computerSelection){
+rockButton.onclick = function() {
+    computerPlay()
     
-    if(userSelection === 'rock' && computerSelection === 'rock'){
-        console.log('tie')
-    }
-    if(userSelection === 'rock' && computerSelection === 'paper'){
-        console.log('loss')
-    }
-    if(userSelection === 'rock' && computerSelection === 'sissors'){
-        console.log('win')
-    }
-    if(userSelection === 'paper' && computerSelection === 'rock'){
-        console.log('win')
-    }
-    if(userSelection === 'paper' && computerSelection === 'paper'){
-        console.log('tie')
-    }
-    if(userSelection === 'paper' && computerSelection === 'sissors'){
-        console.log('loss')
-    }
-    if(userSelection === 'sissors' && computerSelection === 'rock'){
-        console.log('loss')
-    }
-    if(userSelection === 'sissors' && computerSelection === 'paper'){
-        console.log('win')
-    }
-    if(userSelection === 'sissors' && computerSelection === 'sissors'){
-        console.log('tie')
-    }
-    
-    
+    console.log('rock button clicked')
 }
-const userSelection = userInput;
-const computerSelection = computerPlay();
-console.log(playRound(userSelection, computerSelection));
+paperButton.onclick = function() {
+    console.log('paper button clicked')
+}
+sissorsButton.onclick = function() {
+    console.log('sissors button clicked')
+}
+
+
+
+
+
+
+// let playRound = function (userSelection, computerSelection){
+    
+//     if(userSelection === 'rock' && computerSelection === 'rock'){
+//         console.log('tie')
+//     }
+//     if(userSelection === 'rock' && computerSelection === 'paper'){
+//         console.log('loss')
+//     }
+//     if(userSelection === 'rock' && computerSelection === 'sissors'){
+//         console.log('win')
+//     }
+//     if(userSelection === 'paper' && computerSelection === 'rock'){
+//         console.log('win')
+//     }
+//     if(userSelection === 'paper' && computerSelection === 'paper'){
+//         console.log('tie')
+//     }
+//     if(userSelection === 'paper' && computerSelection === 'sissors'){
+//         console.log('loss')
+//     }
+//     if(userSelection === 'sissors' && computerSelection === 'rock'){
+//         console.log('loss')
+//     }
+//     if(userSelection === 'sissors' && computerSelection === 'paper'){
+//         console.log('win')
+//     }
+//     if(userSelection === 'sissors' && computerSelection === 'sissors'){
+//         console.log('tie')
+//     }
+    
+    
+// }
+// const userSelection = userInput;
+// const computerSelection = computerPlay();
+// console.log(playRound(userSelection, computerSelection));
 // function game(){
 //     for (let outcome in outcomes){
 //         if (`${outcomes[outcome]}` === true){
