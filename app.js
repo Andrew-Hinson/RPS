@@ -1,98 +1,75 @@
-//randomly return Rock, Paper, Siccors, put to lowercase to weed out uppercase variables
-//let userInput =  prompt('Please enter Rock, Paper, or Sissors').toLowerCase();
-// const playerSelection = userInput;
-// const computerSelection = computerPlay();
-// const outcomes = {
-//     tie : (playerSelection === 'rock' && computerSelection === 'rock'),
-//     loss : (playerSelection === 'rock' && computerSelection === 'paper'),
-//     win : (playerSelection === 'rock' && computerSelection === 'sissors'),
-//     win : (playerSelection === 'paper' && computerSelection === 'rock'),
-//     tie : (playerSelection === 'paper' && computerSelection === 'paper'),
-//     loss : (playerSelection === 'paper' && computerSelection === 'sissors'),
-//     loss : (playerSelection === 'sissors' && computerSelection === 'rock'),
-//     win : (playerSelection === 'sissors' && computerSelection === 'paper'),
-//     tie : (playerSelection === 'sissors' && computerSelection === 'sissors')
-// };
-
-let computerPlay = function () {
-    //create RNG between 1-10
-    let rng = Math.floor(Math.random() * 10) + 1;
-    //if the number is between 1-3, return rock
-    if (rng <= 3 && rng >= 1){
-        return 'rock';
-    }
-    if (rng <= 7 && rng >= 4){
-        return 'paper';
-    }
-    if (rng <= 10 && rng >= 8){
-        return 'sissors';
-    }
-}
 
 const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const sissorsButton = document.querySelector('#sissors-button');
+const buttons = document.querySelectorAll('button');
+const playerSpan = document.querySelector('#playerSpan');
+const computerSpan = document.querySelector('#computerSpan');
+const winner = document.querySelector('#winner');
+let playerChoice = 0;
+let computerChoice = 0;
+let gameLogic = {
+    rock : 0,
+    paper: 0,
+    sissors: 0
+};
+
+let computerPlay = function () {
+let rng = Math.floor(Math.random() * 3) + 1;
+    if (rng == 1){   //rock
+        computerChoice = gameLogic.rock;
+        computerSpan.innerHTML = ("ROCK!")
+    }
+    if (rng == 2){   //paper
+        computerChoice = gameLogic.paper;
+        computerSpan.innerHTML = ("PAPER!")
+    }
+    if (rng == 3){   //sissors
+        computerChoice = gameLogic.sissors;
+        computerSpan.innerHTML = ("SISSORS!")
+    }
+};
+
+
 
 rockButton.onclick = function() {
+    gameLogic.rock = 2;
+    gameLogic.paper = 3;
+    gameLogic.sissors = 1;
+    playerChoice = gameLogic.rock;
+    playerSpan.innerHTML = ("ROCK!");
     computerPlay()
-    
-    console.log('rock button clicked')
-}
+};
 paperButton.onclick = function() {
-    console.log('paper button clicked')
-}
+    gameLogic.rock = 1;
+    gameLogic.paper = 2;
+    gameLogic.sissors = 3;
+    playerChoice = gameLogic.paper;
+    playerSpan.innerHTML = ("PAPER!");
+    computerPlay()
+};
 sissorsButton.onclick = function() {
-    console.log('sissors button clicked')
-}
+    gameLogic.rock = 3;
+    gameLogic.paper = 1;
+    gameLogic.sissors = 2;
+    playerChoice = gameLogic.sissors;
+    playerSpan.innerHTML = ("SISSORS!");
+    computerPlay()
+};
+//game evaluation
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function(){
+        if(playerChoice > computerChoice){
+            winner.innerHTML = ("Player wins!")
+        } else if (playerChoice < computerChoice){
+            winner.innerHTML = ("Computer wins!")
+        } else {
+            winner.innerHTML = ("Tie match, try again!")
+        }
+        playerChoice = 0;
+        computerChoice = 0;
+    })
+};
 
 
 
-
-
-
-// let playRound = function (userSelection, computerSelection){
-    
-//     if(userSelection === 'rock' && computerSelection === 'rock'){
-//         console.log('tie')
-//     }
-//     if(userSelection === 'rock' && computerSelection === 'paper'){
-//         console.log('loss')
-//     }
-//     if(userSelection === 'rock' && computerSelection === 'sissors'){
-//         console.log('win')
-//     }
-//     if(userSelection === 'paper' && computerSelection === 'rock'){
-//         console.log('win')
-//     }
-//     if(userSelection === 'paper' && computerSelection === 'paper'){
-//         console.log('tie')
-//     }
-//     if(userSelection === 'paper' && computerSelection === 'sissors'){
-//         console.log('loss')
-//     }
-//     if(userSelection === 'sissors' && computerSelection === 'rock'){
-//         console.log('loss')
-//     }
-//     if(userSelection === 'sissors' && computerSelection === 'paper'){
-//         console.log('win')
-//     }
-//     if(userSelection === 'sissors' && computerSelection === 'sissors'){
-//         console.log('tie')
-//     }
-    
-    
-// }
-// const userSelection = userInput;
-// const computerSelection = computerPlay();
-// console.log(playRound(userSelection, computerSelection));
-// function game(){
-//     for (let outcome in outcomes){
-//         if (`${outcomes[outcome]}` === true){
-//         console.log(outcome);
-//         }
-//     }
-// }
-
-// computerPlay();
-
-// game();
