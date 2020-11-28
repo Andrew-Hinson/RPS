@@ -1,5 +1,5 @@
 # RPS
-Rock Paper Sissors console game
+Rock Paper Sissors game // 
 Doing the Odin Project Rock Paper Sissors Project.
 
 **************************
