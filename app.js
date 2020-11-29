@@ -2,17 +2,26 @@
 const rockButton = document.querySelector('#rock-button');
 const paperButton = document.querySelector('#paper-button');
 const sissorsButton = document.querySelector('#sissors-button');
-const buttons = document.querySelectorAll('button');
+const rpsButtons = document.querySelectorAll('.rps');
 const playerSpan = document.querySelector('#playerSpan');
 const computerSpan = document.querySelector('#computerSpan');
 const winner = document.querySelector('#winner');
+const playingTo = document.querySelector('#playto');
+const resetButton = document.querySelector('#RESET');
+const rpsOver = document.querySelector('#rpsOver');
+let playerScore = document.querySelector('#playerScore');
+let computerScore = document.querySelector('#computerScore');
+let gameOver = 3;
 let playerChoice = 0;
 let computerChoice = 0;
 let gameLogic = {
     rock : 0,
     paper: 0,
-    sissors: 0
+    sissors: 0,
+    playerCounter: 0,
+    computerCounter: 0,
 };
+
 
 let computerPlay = function () {
 let rng = Math.floor(Math.random() * 3) + 1;
@@ -56,20 +65,47 @@ sissorsButton.onclick = function() {
     playerSpan.innerHTML = ("SISSORS!");
     computerPlay()
 };
+resetButton.onclick = function() {
+    gameLogic.playerCounter = 0;
+    gameLogic.computerCounter = 0;
+    playerScore.innerHTML = 0;
+    computerScore.innerHTML =0;
+    rpsOver.innerHTML = ("")
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    sissorsButton.disabled = false;
+}
+
+playingTo.addEventListener('change', function(){
+    gameOver = parseInt(this.value);
+})
 //game evaluation
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function(){
+for (let i = 0; i < rpsButtons.length; i++) {
+    rpsButtons[i].addEventListener("click", function(){
+        
         if(playerChoice > computerChoice){
             winner.innerHTML = ("Player wins!")
+            gameLogic.playerCounter++;
+            playerScore.innerHTML = gameLogic.playerCounter;
         } else if (playerChoice < computerChoice){
             winner.innerHTML = ("Computer wins!")
+            gameLogic.computerCounter++;
+            computerScore.innerHTML = gameLogic.computerCounter;
         } else {
             winner.innerHTML = ("Tie match, try again!")
         }
         playerChoice = 0;
         computerChoice = 0;
-    })
+        if(gameLogic.playerCounter == gameOver || gameLogic.computerCounter == gameOver){
+            rpsOver.innerHTML = ("GAME OVER");
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            sissorsButton.disabled = true;
+        }
+        });
 };
+
+
 
 
 

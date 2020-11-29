@@ -18,22 +18,38 @@
     </div>
     <div id="game-content" class="container">
       <header class="card-header">
-        <p id="winner" class="card-header-title is-centered"></p>
+        <p class="card-header-title is-centered">
+        <span class="tag is-light is-large">Player:</span><span id="playerScore" class="tag is-primary is-light is-large">0</span>
+        <span class="tag is-light is-large">Computer:</span><span id="computerScore" class="tag is-primary is-light is-large">0</span>
+        <span id="winner" class="tag is-info is-light is-large">Current winner</span>
+        <button id="RESET" class="button is-danger">RESET</button>
+        </p>
       </header>
         <header class="card-header">
             <p class="card-header-title is-centered">Player chose: <span id="playerSpan"></span></p>
+            <p class="card-header-title is-centered"><span id="rpsOver" class="tag is-info is-light is-large">GAME IN PROGRESS</span></p>
             <p class="card-header-title is-centered">Computer chose: <span id="computerSpan"></span></p>
         </header>
-        <div class="card-content">
-          <div class="content">
-             INSTRUCTIONS: Choose a button below, the computer will choose as well and auto determine the winner!
-          </div>
-        </div>
-        <div id="button-div" class="buttons is-centered">
+        <div id="button-div content" class="buttons is-centered">
         <footer class="card-footer">
-          <button id="rock-button" class="button is-primary">Rock</button>
-          <button id="paper-button" class="button is-primary">Paper</button>
-          <button id="sissors-button" class="button is-primary">Sissors</button>
+          <button id="rock-button" class="button is-primary rps">Rock</button>
+          <button id="paper-button" class="button is-primary rps">Paper</button>
+          <button id="sissors-button" class="button is-primary rps">Sissors</button>
+                <div class="select is-rounded is-info">
+                    <select name="" id="playto">
+                      <option value="3">Playing To..</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                  </select>
+                </div>
+            </div>
+          </div>
         </footer>
         </div>
       </div>
