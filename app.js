@@ -70,10 +70,11 @@ resetButton.onclick = function() {
     gameLogic.computerCounter = 0;
     playerScore.innerHTML = 0;
     computerScore.innerHTML =0;
-    rpsOver.innerHTML = ("")
+    rpsOver.innerHTML = ("GAME IN PROGRESS")
     rockButton.disabled = false;
     paperButton.disabled = false;
     sissorsButton.disabled = false;
+
 }
 
 playingTo.addEventListener('change', function(){
