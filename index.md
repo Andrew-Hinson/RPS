@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+## Andrew's Projects
+My main goals are to showcase projects in a quick fasion here, and then to publish them on my own portfolio site as well.
+This way, people can easily get a quick idea of what I've made, and can go further on my portfolio site if they wish.
 
-You can use the [editor on GitHub](https://github.com/Andrew-Hinson/RPS/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+```For now the only project that I'd want to showcase is my Odin project "RPS"-rock paper sissors. I'm proud of it for several reasons.
+1. It was not a code-along.
+2. I spent a lot of time on Stack Overflow and googling issues I came across.
+3. The code looks nice and orderly with minimal commenting needed.
 
-- Bulleted
-- List
+My main goals as a junior developer are to write clean and neat code, and to basically DRY.
+Thanks for stopping by!
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Andrew-Hinson/RPS/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
